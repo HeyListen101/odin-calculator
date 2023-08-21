@@ -4,10 +4,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-}
-
-* {
-    border: 1px solid black;
+    font-family: monospace;
 }
 
 .calculator {
@@ -15,8 +12,31 @@ body {
     flex-direction: column;
     height: 75vh;
     width: 25vw;
+    gap: 1px;
+}
+
+.display-one {
+    height: 5vh;
+    width: 100%;
+}
+
+.display-two {
+    height: 10vh;
+    width: 100%;
 }
 
 .row {
     display: flex;
+    height: 10vh;
+    width: 100%;
+    gap: 1px;
+}
+
+.row button {
+    font-family: monospace;
+    font-size: 25px;
+    flex: 1;
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
 }
