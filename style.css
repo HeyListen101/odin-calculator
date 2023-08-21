@@ -40,3 +40,15 @@ body {
     border-radius: 15px;
     border: none;
 }
+
+.back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    height: 50%;
+    width: auto;
+    padding: 0;
+}
