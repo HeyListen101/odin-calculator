@@ -27,7 +27,7 @@ body {
 
 .row {
     display: flex;
-    height: 10vh;
+    height: 12vh;
     width: 100%;
     gap: 1px;
 }
@@ -39,6 +39,23 @@ body {
     cursor: pointer;
     border-radius: 15px;
     border: none;
+    transition: 0.25s;
+}
+
+.row .divide {
+    flex-basis: 6.25vw;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.row button:hover {
+    background-color: black;
+    color: white;
+}
+
+.row button:active {
+    background-color: white;
+    color: black;
 }
 
 .back {
