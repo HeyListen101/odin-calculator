@@ -15,14 +15,18 @@ body {
     gap: 1px;
 }
 
+.display-one,
+.display-two {
+    width: 100%;
+    text-align: right;
+}
+
 .display-one {
     height: 5vh;
-    width: 100%;
 }
 
 .display-two {
     height: 10vh;
-    width: 100%;
 }
 
 .row {
