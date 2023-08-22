@@ -19,6 +19,7 @@ body {
 .display-two {
     width: 100%;
     text-align: right;
+    padding-bottom: 0;
 }
 
 .display-one {
@@ -27,6 +28,8 @@ body {
 
 .display-two {
     height: 10vh;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .row {
