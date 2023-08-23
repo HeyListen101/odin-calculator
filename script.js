@@ -2,6 +2,7 @@ const nums = document.querySelectorAll('.num');
 const operators = document.querySelectorAll('.operator');
 const clear = document.querySelector('.clear');
 const back = document.querySelector('.back');
+const negate = document.querySelector('.negate');
 const displayOne = document.querySelector('.display-one');
 const displayTwo = document.querySelector('.display-two');
 let newOperator = false;
@@ -35,6 +36,13 @@ operators.forEach(operator => operator.addEventListener('click', () => {
     prevOperator = operator.textContent;
     newOperator = true;
 }));
+
+negate.addEventListener('click', () => {
+    if (displayTwo.textContent != '' && Number(displayTwo.textContent) != 0) {
+        if (displayTwo.textContent[0] == '-') displayTwo.textContent = displayTwo.textContent.slice(1);
+        else displayTwo.textContent = '-' + displayTwo.textContent;
+    }
+});
 
 clear.addEventListener('click', () => {
     displayOne.textContent = '';
