@@ -55,12 +55,6 @@ body {
     flex-shrink: 0;
 }
 
-.row .equals {
-    flex-basis: 12.5vw;
-    flex-grow: 0;
-    flex-shrink: 0;
-}
-
 .row button:hover {
     background-color: black;
     color: white;
