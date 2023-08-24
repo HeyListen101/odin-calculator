@@ -54,6 +54,8 @@ document.body.addEventListener('keydown', event => {
         if (newOperator) displayTwo.textContent = '';
         newOperator = false;
         if (!displayTwo.textContent.includes('.')) displayTwo.textContent += '.';
+    } else if (input == 'Backspace') {
+        displayTwo.textContent = displayTwo.textContent.slice(0, displayTwo.textContent.length - 1);
     }
 
     prevKey = event.code.slice(0, 5);
