@@ -19,21 +19,27 @@ body {
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 
-.display-one,
-.display-two {
+.display-one-div {
+    height: 10vh;    
     width: 100%;
     text-align: right;
-    padding-bottom: 0;
+    border-radius: 10px;
 }
 
 .display-one {
-    height: 5vh;
+    padding-top: 10px;
+    height: 2.5vh;
 }
 
 .display-two {
-    height: 10vh;
+    height: 7.5vh;
     font-size: 30px;
     font-weight: bold;
+}
+
+p {
+    padding-right: 10px;
+    margin: 0;
 }
 
 .row {
