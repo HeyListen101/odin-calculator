@@ -7,16 +7,56 @@ const displayOne = document.querySelector('.display-one');
 const displayTwo = document.querySelector('.display-two');
 let newOperator = false;
 let prevOperator = null;
+let prevKey = null;
 let valA, valB;
 
-document.body.addEventListener('keypress', event => {
-    let input = event.code.slice(5);
+document.body.addEventListener('keydown', event => {
+    let input = event.code;
+    console.log(input);
+    let num = input.slice(5);
 
-    if (input >= '0' && input <= '9') {
+    if (input == 'Minus' || input == 'Slash' || prevKey == 'Shift' && (input == 'Equal' || num == 8) || input == 'Equal' || input == 'Enter') {
+        if (!newOperator) {
+            valB = Number(displayTwo.textContent);
+            
+            if (prevOperator == null) valA = valB;
+            else if (prevOperator == '+') {
+                valA = add(valA, valB);
+            } else if (prevOperator == '-') {
+                valA = subtract(valA, valB);
+            } else if (prevOperator == '/') {
+                valA = divide(valA, valB);
+            } else if (prevOperator == 'x') {
+                valA = multiply(valA, valB);
+            }
+            displayTwo.textContent = valA;
+        }
+
+        if (input ==  'Minus') {
+            prevOperator = '-';
+        } else if (input == 'Slash') {
+            prevOperator = '/';
+        } else if (input == 'Equal' && prevKey == 'Shift') {
+            prevOperator = '+';
+        } else if (num == '8' && prevKey == 'Shift') {
+            prevOperator = 'x';
+        } else if (input == 'Equal' || input == 'Enter') {
+            prevOperator = '=';
+        }
+        displayOne.textContent = displayTwo.textContent + ' ' + prevOperator;
+        newOperator = true;    
+
+    } else if (num >= '0' && num <= '9') {
         if (newOperator) displayTwo.textContent = '';
         newOperator = false;
-        displayTwo.textContent += input;
+        displayTwo.textContent += num;
+    } else if (input == 'Period') {
+        if (newOperator) displayTwo.textContent = '';
+        newOperator = false;
+        if (!displayTwo.textContent.includes('.')) displayTwo.textContent += '.';
     }
+
+    prevKey = event.code.slice(0, 5);
 });
 
 nums.forEach(num => num.addEventListener('click', () => {
