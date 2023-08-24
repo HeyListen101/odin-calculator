@@ -9,6 +9,16 @@ let newOperator = false;
 let prevOperator = null;
 let valA, valB;
 
+document.body.addEventListener('keypress', event => {
+    let input = event.code.slice(5);
+
+    if (input >= '0' && input <= '9') {
+        if (newOperator) displayTwo.textContent = '';
+        newOperator = false;
+        displayTwo.textContent += input;
+    }
+});
+
 nums.forEach(num => num.addEventListener('click', () => {
     if (newOperator) displayTwo.textContent = '';
     newOperator = false;
