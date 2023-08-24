@@ -10,12 +10,12 @@ let prevOperator = null;
 let prevKey = null;
 let valA, valB;
 
+// Keyboard Inputs
 document.body.addEventListener('keydown', event => {
     let input = event.code;
-    console.log(input);
     let num = input.slice(5);
 
-    if (input == 'Minus' || input == 'Slash' || prevKey == 'Shift' && (input == 'Equal' || num == 8) || input == 'Equal' || input == 'Enter') {
+    if (input == 'Minus' || input == 'Slash' || (prevKey == 'Shift' && (input == 'Equal' || num == 8)) || input == 'Equal' || input == 'Enter') {
         if (!newOperator) {
             valB = Number(displayTwo.textContent);
             
@@ -61,6 +61,7 @@ document.body.addEventListener('keydown', event => {
     prevKey = event.code.slice(0, 5);
 });
 
+// Button Inputs 
 nums.forEach(num => num.addEventListener('click', () => {
     if (newOperator) displayTwo.textContent = '';
     newOperator = false;
