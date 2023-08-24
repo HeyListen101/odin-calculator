@@ -12,7 +12,11 @@ body {
     flex-direction: column;
     height: 75vh;
     width: 25vw;
-    gap: 1px;
+    gap: 10px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 
 .display-one,
@@ -36,15 +40,18 @@ body {
     display: flex;
     height: 12vh;
     width: 100%;
-    gap: 1px;
+    gap: 10px;
 }
 
 .row button {
+    font-weight: bolder;
+    background-color: #545554;
+    color: white;
     font-family: monospace;
     font-size: 25px;
     flex: 1;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 50px;
     border: none;
     transition: 0.25s;
 }
@@ -56,7 +63,7 @@ body {
 }
 
 .row button:hover {
-    background-color: black;
+    background-color: #5ec214;
     color: white;
 }
 
